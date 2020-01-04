@@ -1,0 +1,56 @@
+<div class="header">
+
+    <div class="maxWidth">
+        <div class="logo">
+            <img src="../../assets/img/Logo.png" alt="">
+        </div>
+
+
+        <div class="headerLinks">
+            <a [routerLink]="['/']" fragment="main" class="menu_item">{{'header.mainPage'| translate}}</a>
+            <a [routerLink]="['/']" fragment="course" class="menu_item">{{'header.course'| translate}}</a>
+            <a [routerLink]="['/']" fragment="video" class="menu_item">{{'header.video' | translate}}</a>
+            <a [routerLink]="['/']" fragment="gallery" class="menu_item">{{'header.gallery'| translate}}</a>
+            <a [routerLink]="['/']" fragment="contactMe" class="menu_item">{{'header.contactMe' | translate}}</a>
+            <a [routerLink]="['/']" fragment="contactPay" class="menu_item">{{'header.contactsPay' | translate}}</a>
+
+            <a *ngIf="!user" [routerLink]="['login']" class="menu_item">{{'login.login' | translate}}</a>
+            <a *ngIf="user" [routerLink]="['user-page']" class="menu_item"> {{'header.myPage' | translate}}</a>
+            <a *ngIf="user" (click)="onSingOut()" class="menu_exit"> {{'header.exit' | translate}}({{ user.name }})</a>
+        </div>
+
+
+        <div class="burgerMenu">
+
+            <button mat-button [matMenuTriggerFor]="menu">{{'header.menu'|translate}}</button>
+            <mat-menu #menu="matMenu">
+
+                <button mat-menu-item [routerLink]="['/']" fragment="main" >{{'header.mainPage'| translate}}</button>
+                <button mat-menu-item [routerLink]="['/']" fragment="course" >{{'header.course'| translate}}</button>
+                <button mat-menu-item [routerLink]="['/']" fragment="video" >{{'header.video' | translate}}</button>
+                <button mat-menu-item [routerLink]="['/']" fragment="gallery" >{{'header.gallery'| translate}}</button>
+                <button mat-menu-item [routerLink]="['/']" fragment="contactMe" >{{'header.contactMe' | translate}}</button>
+                <button mat-menu-item [routerLink]="['/']" fragment="contactPay" >{{'header.contactsPay' | translate}}</button>
+                <button mat-menu-item [routerLink]="['login']"  *ngIf="!user">{{'login.login' | translate}}</button>
+                <button mat-menu-item [routerLink]="['user-page']"  *ngIf="user"> {{'header.myPage' | translate}}</button>
+                <button mat-menu-item *ngIf="user" (click)="onSingOut()"> {{'header.exit' | translate}}({{ user.name }})</button>
+
+            </mat-menu>
+
+        </div>
+
+
+
+        <div class="languageChange">
+            <a class="menu_item" (click)="useLanguage('ru')">RU</a>
+            |
+            <a class="menu_item" (click)="useLanguage('en')">EN</a>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+

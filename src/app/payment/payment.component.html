@@ -1,0 +1,58 @@
+<div class="paymentPage">
+
+    <div class="paymentHeader">
+
+        <div class="paymentHeader__title">
+            Waxom Video Presentation
+        </div>
+
+        <div class="paymentHeader__text">
+            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur mutationem
+            consuetudium.
+        </div>
+
+    </div>
+
+    <div class="payment">
+        <div class="buttonEasy">
+            <div class="paymentLogo">
+                <img class="payImg" src="../../assets/img/privat.png" alt="">
+            </div>
+            <div class="paymentDesc">
+                {{'home.paymentBase'|translate}}
+            </div>
+            <div class="buttonSend" *ngIf="success" [innerHtml]="buttonEasy | noSanitize" (click)="payment()"></div>
+            <form class="buttonSend" *ngIf="!success" (click)="payment()">
+                <button style="border: none !important; display:inline-block !important;text-align: center !important;padding: 7px 20px !important;
+		color: #fff !important; font-size:16px !important; font-weight: 600 !important; font-family:OpenSans, sans-serif; cursor: pointer !important; border-radius: 2px !important;
+		background: rgb(122,183,43) !important;" onmouseover="this.style.opacity='0.5';"
+                        onmouseout="this.style.opacity='1';">
+                    <img src="https://static.liqpay.ua/buttons/logo-small.png" name="btn_text"
+                         style="margin-right: 7px !important; vertical-align: middle !important;"/>
+                    <span style="vertical-align:middle; !important">{{'home.payment'|translate}}</span>
+                </button>
+            </form>
+        </div>
+        <div class="buttonHard">
+            <div class="paymentLogo">
+                <img class="payImg" src="../../assets/img/privat.png" alt="">
+            </div>
+            <div class="paymentDesc">
+                {{'home.paymentAdvanced'|translate}}
+            </div>
+            <div class="buttonSend" *ngIf="success" [innerHtml]="buttonHard | noSanitize" (click)="payment()"></div>
+            <form class="buttonSend" *ngIf="!success" (click)="payment()">
+                <button style="border: none !important; display:inline-block !important;text-align: center !important;padding: 7px 20px !important;
+		color: #fff !important; font-size:16px !important; font-weight: 600 !important; font-family:OpenSans, sans-serif; cursor: pointer !important; border-radius: 2px !important;
+		background: rgb(122,183,43) !important;" onmouseover="this.style.opacity='0.5';"
+                        onmouseout="this.style.opacity='1';">
+                    <img src="https://static.liqpay.ua/buttons/logo-small.png" name="btn_text"
+                         style="margin-right: 7px !important; vertical-align: middle !important;"/>
+                    <span style="vertical-align:middle; !important">{{'home.payment'|translate}}</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+</div>

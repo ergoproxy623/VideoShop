@@ -1,0 +1,28 @@
+<div class="field">
+    <slideshow [showDots]="true" [minHeight]="'100vh'" [imageUrls]="imageUrls"></slideshow>
+
+    <div class="description">
+
+        <div class="smallTitle">
+            <h3>Unique and Modern Design</h3>
+        </div>
+
+        <div class="bigTitle">
+            <h2>Portfolio PSD Template</h2>
+        </div>
+
+        <div class="text">
+            Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer
+            possim assum.
+        </div>
+
+        <div class="registerButton">
+            <button mat-raised-button color="primary" [disabled]="this.authService.getUser()" [routerLink]="['/signup']"
+                    class="menu_item">{{ 'registration.register' | translate}}</button>
+        </div>
+
+
+    </div>
+
+</div>
+

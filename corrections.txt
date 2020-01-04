@@ -1,0 +1,20 @@
+1. fb.component -> fb.service
+4. http.service + auth.service
+13. save language setting
+
+
+04.09.2019
+2. header.css -> header.scss
+3. home.css -> home.scss
+10. app.module
+
+05.09.2019
+5. signupform.service
+6. video.service
+7. custom.validator
+9. video.interface
+- close video on escape
+- removed scroll
+- translated modal window
+
+https://stackblitz.com/angular/mxkbpnmaxbv?file=app%2Fdialog-content-example.ts

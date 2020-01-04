@@ -1,0 +1,122 @@
+<div class="container">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="example-container">
+
+            <mat-form-field>
+                <input matInput placeholder="{{ 'registration.name' | translate }}" formControlName="username">
+
+                <mat-error *ngIf="!username.valid && username.touched">
+                    {{'registration.nameErr' | translate}}
+                </mat-error>
+
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <input matInput placeholder="{{ 'registration.last_name' | translate }}" formControlName="surname">
+
+                <mat-error *ngIf="!surname.valid && surname.touched">
+                    {{'registration.last_nameErr' | translate}}
+                </mat-error>
+
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <input matInput placeholder="{{ 'registration.telephone' | translate }} +380955555555" formControlName="telephone">
+
+                <mat-error *ngIf="telephone.hasError('required') && telephone.touched">
+                    {{ 'registration.telephoneInput' | translate }}
+                </mat-error>
+
+                <mat-error *ngIf="telephone.hasError('pattern') && telephone.touched">
+                    <span>{{ 'registration.telephoneWrong' | translate }}</span>
+                </mat-error>
+
+                <mat-error *ngIf="telephone.hasError('Exists') && telephone.touched">
+                    {{'registration.telephoneUse' | translate }}
+                </mat-error>
+
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <input matInput placeholder="{{ 'registration.email' | translate }}" formControlName="email">
+
+                <mat-error
+                        *ngIf="(email.hasError('email') || email.hasError('required')) && email.touched">
+                    {{'registration.emailWrong' | translate}}
+                </mat-error>
+
+                <mat-error
+                        *ngIf="email.hasError('Exists') && email.touched">
+                    {{ 'registration.emailUse'| translate }}
+                </mat-error>
+
+            </mat-form-field>
+
+
+            <mat-form-field>
+
+                <input matInput placeholder="{{ 'registration.password' | translate }}"
+                       formControlName="password"
+                       [type]="hide ? 'password' : 'text'">
+
+                <mat-error
+                        *ngIf="password.hasError('required') && password.touched">
+                    {{'registration.passwordInput'| translate}}
+                </mat-error>
+
+                <mat-error *ngIf="password.hasError('minlength') && password.touched">
+                    {{'registration.passwordShort'| translate}}
+                </mat-error>
+
+                <mat-error *ngIf="password.hasError('pattern') && password.touched">
+                    {{'registration.passwordType'|translate}}
+                </mat-error>
+
+                <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <input matInput placeholder="{{ 'registration.repeatPass' | translate }}"
+                       formControlName="password-repeat" [errorStateMatcher]="matcher"
+                       [type]="hideRepeat ? 'password' : 'text'">
+
+                <mat-error
+                        *ngIf="passRepeat.hasError('required') && passRepeat.touched">
+                    {{'registration.passwordRepeatInput'|translate}}
+                </mat-error>
+
+                <mat-error *ngIf="signupForm.hasError('notSame') && !passRepeat.hasError('required')">
+                    {{'registration.passwordMismatch'|translate}}
+                </mat-error>
+
+
+                <button type="button" mat-icon-button matSuffix (click)="hideRepeat = !hideRepeat"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideRepeat">
+                    <mat-icon>{{hideRepeat ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+
+        </div>
+
+    </form>
+
+    <button [disabled]="!signupForm.valid" mat-raised-button color="primary" class="register"
+            (click)="onSubmit()">{{ 'registration.register' | translate }}</button>
+    <button mat-raised-button color="primary" class="registerFb"
+            (click)="this.fb.signInWithFB()">{{ 'registration.registerFB' | translate}}</button>
+
+</div>
+
+
+
+
+

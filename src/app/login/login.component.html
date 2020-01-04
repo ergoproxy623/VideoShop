@@ -1,0 +1,59 @@
+<div class="example-container">
+    <form [formGroup]="loginData" (ngSubmit)="this.http.login(loginData)">
+        <mat-form-field>
+
+            <input matInput placeholder="{{ 'registration.email' | translate }}" type="text" formControlName="email">
+
+            <mat-error *ngIf="loginData.get('email').hasError('email') && !loginData.get('email').hasError('required') && loginData.get('email').touched">
+                {{'registration.emailWrong' | translate}}
+            </mat-error>
+            <mat-error *ngIf="loginData.get('email').hasError('required') && loginData.get('email').touched">
+                {{'registration.emailWrong' | translate}}
+            </mat-error>
+
+            <mat-error *ngIf="loginData.get('email').hasError('emailExists') && loginData.get('email').touched">
+                {{ 'login.wrongEmail' | translate}}
+            </mat-error>
+
+        </mat-form-field>
+
+
+        <mat-form-field>
+
+            <input matInput placeholder="{{ 'registration.password' | translate }}" formControlName="password"
+                   [type]="hide ? 'password' : 'text'">
+            <mat-error *ngIf="loginData.get('password').hasError('required') && loginData.get('password').touched">
+                {{'registration.passwordInput' | translate}}
+            </mat-error>
+
+
+            <mat-error *ngIf="loginData.get('password').hasError('minlength') && loginData.get('password').touched">
+                {{'registration.passwordShort' | translate}}
+            </mat-error>
+
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <div>
+            <a [routerLink]="['../passRecovery']">{{'login.forgotPass' | translate}}</a>
+        </div>
+
+        <div>
+            <button mat-raised-button color="primary" type="submit">{{'login.login' | translate}}</button>
+            <!--            <button [disabled]="loginData.invalid" type="submit">send</button>-->
+        </div>
+    </form>
+
+
+
+
+</div>
+
+<div class="fbLogin">
+    <button mat-raised-button color="primary" (click)="fb.signInWithFB()">{{'login.loginFB' | translate}}</button>
+</div>
+
+

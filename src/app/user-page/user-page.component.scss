@@ -1,0 +1,69 @@
+.additional{
+  padding-top: 70px;
+  min-height: 100vh;
+  background-image: linear-gradient(to right, rgba(78, 52, 39, 0.47), #796a67);
+}
+
+.firstBlockTitle, .secondBlockTitle, .noVideoTitle {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+
+.firstBlockContent, .secondBlockContent{
+  text-align: center;
+}
+
+.videoWindow{
+  width:400px;
+  height:300px;
+  margin: 20px;
+}
+
+//
+//
+//.video{
+//  background-image: linear-gradient(to right, #221c1a, #4e3427);
+//}
+//
+
+.userPage {
+  //background-image: linear-gradient(to right, #221c1a, #4e3427);
+
+  &__name {
+    padding-top: 20px;
+  }
+}
+
+
+
+.firstName {
+  position: relative;
+  padding-top: 200px;
+}
+
+.secondName {
+  position: relative;
+  top: 200px;
+}
+
+
+.mat-tab-body-content {
+  height: unset !important;
+  overflow: unset !important;
+}
+
+
+.userPageAvatar {
+  margin-top: 30px;
+}
+//
+//
+//.userPageLastName, .userPagePhone {
+//  margin-bottom: 50px;
+//}
+//
+//.phone {
+//  width: 280px;
+//}

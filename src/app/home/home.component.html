@@ -1,0 +1,50 @@
+<div id="main"></div>
+<app-main-page></app-main-page>
+
+
+<div id="course"></div>
+<app-our-projects ></app-our-projects>
+
+
+<div id="video"></div>
+<app-carousel ></app-carousel>
+
+
+<div id="gallery"></div>
+<app-gallery></app-gallery>
+
+
+<div id="contactMe"></div>
+<app-feedback></app-feedback>
+
+
+<div id="contactPay"></div>
+<app-payment></app-payment>
+
+
+<app-book></app-book>
+
+<app-contacts></app-contacts>
+
+
+
+<div class="modalWindow" *ngIf="auth.telephoneMissing">
+
+    <div class="">
+        <p class="modalWindow__text">{{'modalWindow.begin'|translate}} <a [routerLink]="['user-page']" > {{'modalWindow.end'|translate}} </a></p>
+    </div>
+
+    <button class="modalWindow__button" (click)="closeModalWindow()">Ok</button>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

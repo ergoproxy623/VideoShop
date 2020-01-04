@@ -1,0 +1,67 @@
+<div class="feedbackPage">
+
+    <div class="header">
+
+        <div class="header__title">
+            Waxom Video Presentation
+        </div>
+
+        <div class="header__text">
+            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur mutationem
+            consuetudium.
+        </div>
+
+    </div>
+
+
+    <div class="feedbackForm">
+        <form [formGroup]="feedback" class="feedback" (ngSubmit)="onSubmit()">
+
+            <h4 class="text-center">{{'feedback.title'| translate}}</h4>
+
+            <mat-form-field>
+
+                <input matInput placeholder="{{'feedback.name'| translate}}" formControlName="name">
+
+                <mat-error *ngIf="feedback.get('name').hasError('required')&& feedback.get('name').touched">
+                    {{'feedback.nameErr'| translate}}
+                </mat-error>
+
+            </mat-form-field>
+
+            <mat-form-field>
+
+                <input matInput placeholder="{{'feedback.email'|translate}}" formControlName="email">
+
+                <mat-error *ngIf="(feedback.get('email').hasError('required') || feedback.get('email').hasError('email'))&& feedback.get('email').touched">
+                    {{'registration.emailWrong' | translate}}
+                </mat-error>
+
+
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="{{ 'registration.telephone' | translate }} +380955555555" formControlName="phone">
+
+
+                <mat-error *ngIf="feedback.get('phone').hasError('pattern')&& feedback.get('phone').touched">
+                    {{'registration.telephoneWrong' | translate}}
+                </mat-error>
+
+            </mat-form-field>
+
+            <mat-form-field>
+
+                <textarea rows="5" cols="50" matInput placeholder="{{'feedback.text'|translate}}" formControlName="message"></textarea>
+
+                <mat-error *ngIf="feedback.get('message').hasError('required')&& feedback.get('message').touched">
+                    {{'feedback.textErr'|translate}}
+                </mat-error>
+
+            </mat-form-field>
+
+            <button [disabled]="!feedback.valid" mat-raised-button color="primary" class="button"> {{'feedback.send'|translate}} </button>
+
+        </form>
+    </div>
+</div>

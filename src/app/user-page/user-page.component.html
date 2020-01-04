@@ -1,0 +1,145 @@
+<div class="additional">
+    <mat-tab-group>
+
+        <mat-tab label="{{'userPage.user'| translate}}">
+
+            <div class="userPage" *ngIf="user">
+
+                <div class="background">
+
+                    <div class="userPage__name">
+                        <div>{{ "userPage.currentName"| translate}} {{ user.name }}</div>
+                        {{"userPage.name" | translate}}
+                        <mat-form-field>
+
+                            <input matInput placeholder="{{ 'registration.name' | translate }}"
+                                   [formControl]="firstName">
+
+                            <mat-error
+                                    *ngIf="(firstName.hasError('required') ||  firstName.hasError('pattern'))&& firstName.touched">
+                                {{'registration.nameErr' | translate}}
+                            </mat-error>
+
+                        </mat-form-field>
+                        <button [disabled]="!firstName.valid" mat-raised-button color="primary"
+                                (click)="this.http.changeUserDetails(firstName, 'name')">
+                            {{'userPage.nameUpdate' | translate}}
+                        </button>
+                    </div>
+
+
+                    <div class="userPageName">
+                        <div>{{ "userPage.currentLastName"| translate}} {{ user.last_name }}</div>
+                        {{"userPage.lastName" | translate}}
+                        <mat-form-field>
+
+                            <input matInput placeholder="{{ 'registration.last_name' | translate }}"
+                                   [formControl]="secondName">
+
+                            <mat-error
+                                    *ngIf="(secondName.hasError('required') || secondName.hasError('pattern')) && secondName.touched">
+                                {{'registration.last_nameErr' | translate}}
+                            </mat-error>
+
+                        </mat-form-field>
+                        <button [disabled]="!secondName.valid" mat-raised-button color="primary"
+                                (click)="this.http.changeUserDetails(secondName, 'last_name')">
+                            {{'userPage.last_nameUpdate' | translate }}
+                        </button>
+                    </div>
+
+
+                    <div class="userPagePhone">
+                        <div>{{'userPage.currentPhone' | translate}} {{ user.telephone }}</div>
+                        {{'userPage.phone' | translate}}
+
+
+                        <mat-form-field class="phone">
+
+                            <input matInput placeholder="{{ 'registration.telephone' | translate }} +380955555555"
+                                   [formControl]="phone">
+
+                            <mat-error
+                                    *ngIf="(phone.hasError('required') || phone.hasError('pattern'))&& phone.touched">
+                                {{'userPage.phoneErr' | translate}}
+                            </mat-error>
+
+                            <mat-error *ngIf="phone.hasError('Exists') && phone.touched">
+                                {{'userPage.phoneUse' | translate}}
+                            </mat-error>
+
+                        </mat-form-field>
+                        <button [disabled]="!phone.valid" mat-raised-button color="primary"
+                                (click)="this.http.changeUserDetails(phone, 'telephone')">
+                            {{'userPage.phoneUpdate'| translate}}
+                        </button>
+                    </div>
+                </div>
+
+                <button mat-raised-button color="primary"
+                        [routerLink]="['../passChange']">{{'userPage.changePassword' | translate}}</button>
+
+
+                <div class="userPageAvatar">
+                    <div></div>
+                    {{'userPage.avatar' | translate}}
+
+                    <div>
+                        <img src="{{authService.getUser().avatar_url}}" width="200px" alt="">
+                    </div>
+
+
+                    <div class="changeAvatar">
+                        {{'userPage.avatarUpdate' | translate}}
+                        <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+                            <div>
+
+                                <input type="file" name="profile" id="image_uploads" (change)="onFileSelect($event)"
+                                       accept=".jpg, .jpeg, .png, .bmp"/>
+
+
+                                <button [disabled]="wrongFormat" mat-raised-button color="primary"
+                                        type="submit">{{ 'userPage.upload' | translate }}</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </mat-tab>
+
+
+        <mat-tab label="{{'userPage.video'| translate}}">
+
+            <div *ngIf="!http.showVideo1 && !http.showVideo2" class="noVideoTitle">{{ 'userPage.noVideo' | translate}}</div>
+
+            <div class="video">
+                <div *ngIf="http.showVideo1" class="firstBlockTitle">{{ 'userPage.videoFirst' | translate}}</div>
+
+
+                <div class="firstBlockContent">
+                    <video *ngFor="let item of this.http.purchasedVideo1" class="videoWindow" controls preload>
+
+                        <source src="{{item}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+
+                    </video>
+                </div>
+
+                <div *ngIf="http.showVideo2" class="secondBlockTitle">{{ 'userPage.videoSecond' | translate}}</div>
+
+                <div class="secondBlockContent">
+                    <video *ngFor="let item of this.http.purchasedVideo2" class="videoWindow" controls preload>
+
+                        <source src="{{item}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+
+                    </video>
+                </div>
+            </div>
+
+        </mat-tab>
+
+    </mat-tab-group>
+
+</div>

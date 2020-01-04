@@ -1,0 +1,27 @@
+.description{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    bottom: 60vh;
+    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.smallTitle, .bigTitle, .text{
+    color: white;
+}
+
+.text {
+    margin: auto;
+    max-width: 560px;
+}
+
+.registerButton{
+    margin-top: 20px;
+}
+
+.field{
+    height: 100vh;
+}

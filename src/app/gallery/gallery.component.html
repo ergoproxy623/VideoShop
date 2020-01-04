@@ -1,0 +1,60 @@
+<div class="photo">
+
+    <div class="photo__title">
+        Our Latest Projects.
+    </div>
+
+    <div class="photo__text">
+        Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus
+        dynamicus, qui sequitur mutationem consuetudium.
+    </div>
+
+
+    <div class="gallery">
+
+        <div class="imageTitleContainer" *ngFor="let item of http.gallery;let i = index">
+
+            <div class="imageContainer">
+
+                <img class="image" (click)="showPicture(item, i);" src="{{item.imgUrl}}" alt="">
+
+
+            </div>
+
+            <div class="underImage">
+
+                <p class="underImage__text">{{item.imgName}}</p>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div *ngIf="imageSource" (clickOutside)="onClickedOutside()" [delayClickOutsideInit]="true"
+         class="marginAuto">
+
+        <img (keydown)="handleKeyboardEvent($event)" class="bigPicture" [src]="imageSource"/>
+        <img (click)="openNextImg()" class="rightArrow" src="../../assets/img/rightArrow.png" alt="">
+        <img (click)="openPreviousImg()" class="leftArrow" src="../../assets/img/leftArrow.png" alt="">
+
+
+    </div>
+
+</div>
+<!--(clickOutside)="closePicture()"-->
+<!--<div class="gallery">-->
+<!--    <h2>-->
+<!--        Gallery-->
+<!--    </h2>-->
+<!--    <div  *ngFor="let item of gallery">-->
+<!--        <img (click)="showPicture(item)" class="image" src="{{item.imgUrl}}" alt="">-->
+<!--        <p>{{item.imgName}}</p>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--<div class="center">-->
+<!--    <img (click)="closePicture()" (keydown)="handleKeyboardEvent($event)" class="bigPicture" [src]="imageSource"-->
+<!--         *ngIf="imageSource"/>-->
+<!--</div>-->

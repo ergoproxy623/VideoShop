@@ -1,0 +1,63 @@
+.header {
+  background-image: linear-gradient(to right, #221c1a, #4e3427);
+  z-index: 5;
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  .maxWidth {
+    margin: auto;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+
+    .headerLinks {
+      display: flex;
+      justify-content: space-between;
+      min-width: 700px;
+
+      .menu_item {
+        color: white;
+        cursor: pointer;
+      }
+
+      .menu_exit {
+        color: white;
+        cursor: pointer;
+      }
+
+      .menu_exit:hover{
+        text-decoration: underline;
+      }
+    }
+
+    .burgerMenu {
+      display: none;
+    }
+
+    .languageChange {
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .header {
+    .maxWidth {
+      justify-content: space-around;
+
+      .burgerMenu {
+        color: white;
+        display: block;
+      }
+
+      .headerLinks {
+        display: none;
+      }
+    }
+  }
+}

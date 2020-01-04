@@ -1,0 +1,76 @@
+.paymentPage {
+  background-image: linear-gradient(to right, #211b19, #4e3427);
+  height: auto;
+
+  .paymentHeader {
+    padding-top: 70px;
+    color: white;
+    text-align: center;
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__text {
+      padding-top: 10px;
+      margin: auto;
+      max-width: 550px;
+      font-size: 16px;
+    }
+  }
+
+}
+.payment {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  color: white;
+  height: auto;
+}
+.buttonEasy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: auto;
+  border: 2px double rgba(246, 246, 246, 0.2);
+  border-radius: 5px;
+  margin: 10px;
+}
+.buttonHard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: auto;
+  border: 2px double rgba(246, 246, 246, 0.2);
+  border-radius: 5px;
+  margin: 10px;
+}
+.paymentDesc {
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: lighter;
+  text-transform: uppercase;
+  margin: 10px
+}
+
+.paymentLogo {
+
+  margin: 10px;
+  max-width: 30vw;
+  max-height: 30vw;
+}
+.payImg {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+}
+.buttonSend {
+  margin: 10px;
+}

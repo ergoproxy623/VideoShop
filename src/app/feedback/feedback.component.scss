@@ -1,0 +1,44 @@
+.feedbackPage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("../../assets/img/bgContact.png");
+
+  .header {
+    text-align: center;
+
+    &__title {
+      padding-top: 70px;
+      font-size: 30px;
+      color: white;
+    }
+
+    &__text {
+      padding-top: 30px;
+      font-size: 16px;
+      color: white;
+      max-width: 550px;
+    }
+  }
+
+  .feedbackForm {
+    border-radius: 25px;
+    background: white;
+    min-width: 350px;
+    margin-top: 50px;
+    padding: 35px;
+
+    .feedback {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .button {
+    width: 120px;
+    margin: auto;
+  }
+}

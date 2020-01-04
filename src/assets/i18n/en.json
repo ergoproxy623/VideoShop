@@ -1,0 +1,112 @@
+{
+  "feedback": {
+    "title": "Feedback form",
+    "name": "Your name (required)",
+    "nameErr": "Input your name",
+    "email": "Your e-mail (required)",
+    "phone": "Your telephone",
+    "text": "Input text (required)",
+    "textErr": "Input text",
+    "send": "Send"
+  },
+
+  "header": {
+    "menu": "Menu",
+    "mainPage": "Main Page",
+    "course": "Course",
+    "video": "Video",
+    "gallery": "Gallery",
+    "contactMe": "Contact me",
+    "contactsPay": "Contacts and Pay",
+    "exit": "Log Out",
+    "myPage": "Personal page"
+  },
+  "home": {
+    "registration": "Registration",
+    "enter": "Log In",
+    "exit": "Sing Out",
+    "myPage": "My Page",
+    "paymentBase": "VIDEO PAYMENT UNIT FOR BEGINNERS",
+    "paymentAdvanced": "ASSEMBLY VIDEO PAYMENT UNIT",
+    "payment": "To pay"
+  },
+  "login": {
+    "login": "Log In",
+    "loginFB": "Facebook Log In",
+    "wrongEmail": "Wrong email",
+    "forgotPass": "Forgot password?"
+  },
+
+  "modalWindow": {
+    "begin": "To complete the registration, provide your telephone in ",
+    "end": "Personal page"
+  },
+
+  "passwordChange": {
+    "passwordOld": "Old Password",
+    "passwordNew": "New Password",
+    "passwordRepeat": "Repeat Password",
+    "button": "Change Password"
+  },
+  "recoverPassword": {
+    "title": "Recover Password",
+    "send": "Send",
+    "cancel": "Cancel"
+  },
+  "registration": {
+    "title": "Registration",
+    "name": "Name",
+    "nameErr": "Input your Name",
+    "last_name": "Last Name",
+    "last_nameErr": "Input your Last Name",
+    "email": "Email",
+    "emailWrong": "Provide correct email, please",
+    "emailUse": "Email address is already in use",
+    "telephone": "Telephone in the form",
+    "telephoneInput": "Provide your Telephone, please",
+    "telephoneWrong": "Telephone is wrong",
+    "telephoneUse": "Telephone is already in use",
+    "password": "Password",
+    "passwordInput": "Provide Password, please",
+    "passwordShort": "Password is very short",
+    "passwordType": "Password should contain latin letters and numbers only",
+    "repeatPass": "Repeat Password",
+    "passwordRepeatInput": "Repeat Password, please",
+    "passwordMismatch": "Passwords do not match",
+    "register": "Register",
+    "registerFB": "Register with Facebook"
+  },
+  "toastr": {
+    "logIn": "You have logged in!",
+    "logOut": "You have logged out!",
+    "passRecovery": "New password has been sent to your email.",
+    "register": "You nave been registered.",
+    "wrongPass": "Wrong Password!",
+    "passChanged": "Password has been changed!",
+    "passNotMatch": "Passwords do not match!",
+    "oldPassWrong": "Old Password is wrong!",
+    "messageSent": "Message has been sent!"
+  },
+  "userPage": {
+    "user": "User",
+    "video": "Video",
+    "phoneErr": "Provide Telephone, please",
+    "phoneUse": "Telephone is already in use",
+    "currentName": "Your current First name is: ",
+    "name": "Change First name: ",
+    "nameUpdate": "Update First Name",
+    "currentLastName": "Your current Second name is: ",
+    "lastName": "Change Last Name: ",
+    "last_nameUpdate": "Update Second Name",
+    "currentPhone": "Your current Phone is: ",
+    "phone": "Change phone: ",
+    "phoneUpdate": "Update Phone",
+    "changePassword": "Change Password",
+    "avatar": "Your current Avatar is: ",
+    "avatarUpdate": "Change avatar",
+    "upload": "Upload avatar",
+    "videoFirst": "First video block",
+    "videoSecond": "Second video block",
+    "noVideo": "You have not bought any video"
+  }
+}
